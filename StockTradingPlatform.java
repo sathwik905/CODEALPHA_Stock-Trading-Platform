@@ -107,7 +107,7 @@ class MarketData {
     public void updateStockPrices() {
         for (String symbol : stockPrices.keySet()) {
             double currentPrice = stockPrices.get(symbol);
-            double newPrice = currentPrice * (1 + (random.nextDouble() - 0.5) * 0.1); // Fluctuate within +/- 5%
+            double newPrice = currentPrice * (1 + (random.nextDouble() - 0.5) * 0.1); 
             stockPrices.put(symbol, newPrice);
         }
     }
@@ -118,7 +118,7 @@ class MarketData {
 public class StockTradingPlatform {
 
     public static void main(String[] args) {
-        Portfolio portfolio = new Portfolio(10000.0); // Initial cash balance of $10,000
+        Portfolio portfolio = new Portfolio(10000.0); 
         MarketData marketData = new MarketData();
         Scanner scanner = new Scanner(System.in);
 
@@ -148,7 +148,7 @@ public class StockTradingPlatform {
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
 
-            marketData.updateStockPrices(); // Update stock prices after each transaction or view
+            marketData.updateStockPrices(); 
         }
     }
 
@@ -159,7 +159,7 @@ public class StockTradingPlatform {
         System.out.print("Enter quantity to buy: ");
         int quantity = scanner.nextInt();
 
-        Stock stock = new Stock(symbol, "Dummy Stock", price); // Replace "Dummy Stock" with actual stock name
+        Stock stock = new Stock(symbol, "Dummy Stock", price); 
         portfolio.buyStock(stock, quantity);
     }
 
@@ -170,7 +170,7 @@ public class StockTradingPlatform {
         System.out.print("Enter quantity to sell: ");
         int quantity = scanner.nextInt();
 
-        Stock stock = new Stock(symbol, "Dummy Stock", price); // Replace "Dummy Stock" with actual stock name
+        Stock stock = new Stock(symbol, "Dummy Stock", price);
         portfolio.sellStock(stock, quantity);
     }
 
